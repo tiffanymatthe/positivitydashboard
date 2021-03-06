@@ -1,5 +1,25 @@
 /*style sheet for the productivity dashboard website */
 
 body {
-    background-color:#E8C6BD;
+    background-color #ECE5DF;
 }
+
+ .bg-image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.bg-image::before{
+    background-image: url(https://preview.ibb.co/fSHzBk/kpme4.png);
+    opacity: 0.6;
+    text-emphasis-color: black;
+} 
+
+h1{
+    text-align: center;
+    font-family: 'Noto Serif', 'serif';
+    font-size: 2rem;
+    background-color: #DABDAB;
+}
+
+
