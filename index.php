@@ -53,11 +53,11 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 <textarea class="expand_input" name="entryDescription" id="entryDescription" placeholder="Description" rows="2"></textarea>
             </div>
             <div class="input_selection">
-                <label class="expand_label" for="entryLink">Link (optional)</label>
+                <label class="expand_label" for="entryLink">Link(optional)</label>
                 <input class="expand_input" type="url" name="entryLink" id="entryLink" placeholder="URL">
             </div>
-            <div>
-                <h2>Select a category.</h2>
+            <div class="input_selection">
+                <h2>Category:</h2>
                 <input type="radio" id="category0" name="category" value="Achievement">
                 <label for="category0">Achievement</label><br>
                 <input type="radio" id="category1" name="category" value="Motivation">
@@ -65,8 +65,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 <input type="radio" id="category2" name="category" value="Gratitude">
                 <label for="category2">Gratitude</label><br>
             </div>
-            <div>
-                <h2>Select a tag.</h2>
+            <div class="input_selection">
+                <h2>Tag:</h2>
                 <div class="tag-box" id="achievement-tags" style="display: none;">
                     <input type="radio" id="tag0" name="tag" value="Personal">
                     <label for="tag0">Personal</label><br>
@@ -93,7 +93,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 </div>
 
             </div>
-            <input type="submit">
+            <div class="input_selection">
+                <input type="submit">
+            </div>
         </form>
     </div>
 
