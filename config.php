@@ -5,6 +5,7 @@ if (!isset($_SESSION)) {
 
 $local = true;
 
+$user_id = 1;
 $user_name = "cmd-f";
 $user_password = "cmdf2021";
 
