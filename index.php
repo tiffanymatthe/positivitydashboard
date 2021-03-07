@@ -33,7 +33,6 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="script.js"></script>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -148,7 +147,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                                 <div class="metadata">
                                     <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
                                     <div class="entrylink"><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></div>
-                                    <div class="entrytag"><p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p></div>
+                                    <div class="entrytag">
+                                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                                    </div>
                                 </div>
                                 <p><?php echo $oneEntry['entry-description'] ?></p>
                             </div>
@@ -172,7 +173,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                                 <div class="metadata">
                                     <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
                                     <div class="entrylink"><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></div>
-                                    <div class="entrytag"><p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p></div>
+                                    <div class="entrytag">
+                                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                                    </div>
                                 </div>
                                 <p><?php echo $oneEntry['entry-description'] ?></p>
                             </div>
@@ -194,7 +197,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                                 <div class="metadata">
                                     <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
                                     <div class="entrylink"><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></div>
-                                    <div class="entrytag"><p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p></div>
+                                    <div class="entrytag">
+                                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                                    </div>
                                 </div>
                                 <p><?php echo $oneEntry['entry-description'] ?></p>
                             </div>
@@ -206,8 +211,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
             </div>
         </div>
         <div id="page_content">
-            <h2>Achievements</h2>
-            Achievements:)
+            Add an entry or pick a tab.
         </div>
     </div>
 </body>
