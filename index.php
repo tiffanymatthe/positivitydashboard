@@ -32,19 +32,11 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Positivity Dashboard</title>
     <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="script.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-
-    <script>
-        function change_tab(id) {
-            document.getElementById("page_content").innerHTML = document.getElementById(id + "_desc").innerHTML;
-            document.getElementById("page1").className = "notselected";
-            document.getElementById("page2").className = "notselected";
-            document.getElementById("page3").className = "notselected";
-            document.getElementById(id).className = "selected";
-        }
-    </script>
 </head>
 
 <body id="grad">
@@ -60,21 +52,40 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
             <input type="url" name="entryLink" id="entryLink" placeholder="URL">
             <div>
                 <h2>Select a category.</h2>
-                <input type="checkbox" id="category0" name="category[0]" value="Achievement">
+                <input type="radio" id="category0" name="category" value="Achievement">
                 <label for="category0">Achievement</label><br>
-                <input type="checkbox" id="category1" name="category[1]" value="Motivation">
+                <input type="radio" id="category1" name="category" value="Motivation">
                 <label for="category1">Motivation</label><br>
-                <input type="checkbox" id="category2" name="category[2]" value="Gratitude">
+                <input type="radio" id="category2" name="category" value="Gratitude">
                 <label for="category2">Gratitude</label><br>
             </div>
             <div>
                 <h2>Select a tag.</h2>
-                <input type="checkbox" id="tag0" name="tag[0]" value="Personal">
-                <label for="tag0">Personal</label><br>
-                <input type="checkbox" id="tag1" name="tag[1]" value="Professional">
-                <label for="tag1">Professional</label><br>
-                <input type="checkbox" id="tag2" name="tag[2]" value="Physical Health">
-                <label for="tag2">Physical Health</label><br>
+                <div class="tag-box" id="achievement-tags" style="display: none;">
+                    <input type="radio" id="tag0" name="tag" value="Personal">
+                    <label for="tag0">Personal</label><br>
+                    <input type="radio" id="tag1" name="tag" value="Professional">
+                    <label for="tag1">Professional</label><br>
+                </div>
+                <div class="tag-box" id="motivation-tags" style="display: none;">
+                    <input type="radio" id="tag2" name="tag" value="School">
+                    <label for="tag2">School</label><br>
+                    <input type="radio" id="tag3" name="tag" value="Dreams">
+                    <label for="tag3">Dreams</label><br>
+                    <input type="radio" id="tag4" name="tag" value="Work">
+                    <label for="tag4">Work</label><br>
+                    <input type="radio" id="tag5" name="tag" value="Mental Health">
+                    <label for="tag5">Mental Health</label><br>
+                    <input type="radio" id="tag6" name="tag" value="Physical Health">
+                    <label for="tag6">Physical Health</label><br>
+                </div>
+                <div class="tag-box" id="gratitude-tags" style="display: none;">
+                    <input type="radio" id="tag7" name="tag" value="Big">
+                    <label for="tag7">Big</label><br>
+                    <input type="radio" id="tag8" name="tag" value="Small">
+                    <label for="tag8">Small</label><br>
+                </div>
+                
             </div>
             <input type="submit">
         </form>

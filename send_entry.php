@@ -7,18 +7,6 @@ $entryLink = $_POST['entryLink'];
 $categories = $_POST['category'];
 $tags = $_POST['tag'];
 
-foreach($categories as $value) {
-    if (!empty($value)) {
-        $entry_type = $value;
-    }
-}
-
-foreach($tags as $value) {
-    if (!empty($value)) {
-        $entry_tag = $value;
-    }
-}
-
 $sql = 'INSERT INTO `positivity-entries` (`entry-type`, `user-id`, `entry-name`, `entry-description`, `entry-link`, `entry-tag`) VALUES (?,?,?,?,?,?)';
 
 if ($stmt = mysqli_prepare($conn, $sql)) {
