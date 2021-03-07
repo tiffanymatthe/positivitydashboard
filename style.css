@@ -1,10 +1,19 @@
 /*style sheet for the productivity dashboard website */
 
+:root {
+  --body-font: "Noto Sans", sans-serif;
+  --title-font: "Rubik", sans-serif;
+  --bg-color: #e7cdbc;
+  --text-color: #292a0a;
+  --achievement-color: #f9ece6;
+}
+
 body {
   /* height: 300%;
     width:100%;
     background-image: linear-gradient(to left top, #CEE8F2,#F9ECE6);  */
-  background-color: #e7cdbc;
+  background-color: var(--bg-color);
+  font-family: var(--body-font);
 }
 
 .bg-image {
@@ -20,14 +29,15 @@ body {
 
 h1 {
   text-align: center;
-  font-family: "Noto Serif", "serif";
+  font-family: var(--title-font);
   font-size: 40px;
   /* background-color: #DABDAB; */
   margin-top: 40px;
+  
 }
 
 h2 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #main_content {
@@ -99,10 +109,10 @@ h2 {
 }
 
 .submit {
-    text-align: center;
-    display: block;
-    margin: auto;
-    width: 50%;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 50%;
 }
 
 .expand_label {
@@ -117,11 +127,13 @@ h2 {
   border: 1px solid #292a0a;
 }
 
-.controls, .tag-box {
-    display: flex;
-    flex-wrap: wrap;
+.controls,
+.tag-box {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.controls div label, .tag-box div label {
-    margin-right: 10px;
+.controls div label,
+.tag-box div label {
+  margin-right: 10px;
 }
