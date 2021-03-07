@@ -19,7 +19,6 @@ $(document).ready(function () {
       var targetBox = $("#" + inputValue.toLowerCase() + "-tags");
       $(".tag-box").not(targetBox).hide();
       $(targetBox).show();
-      $('#tag-header').show();
     }
   });
 });

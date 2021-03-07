@@ -9,6 +9,7 @@ $entryLink = $_POST['entryLink'];
 $entryType = $_POST['category'];
 $entryTag = $_POST['tag'];
 
+
 $sql = 'INSERT INTO `positivity-entries` (`entry-type`, `user-id`, `entry-name`, `entry-description`, `entry-link`, `entry-tag`) VALUES (?,?,?,?,?,?)';
 
 if ($stmt = mysqli_prepare($conn, $sql)) {

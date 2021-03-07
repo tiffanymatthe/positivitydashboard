@@ -20,7 +20,6 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
-<body id="grad">
+<body>
     <h1>The Positivity Dashboard</h1>
 
     <div id="add_entry">
@@ -122,79 +121,81 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
         </form>
     </div>
 
-    <?php if (!empty($entry)) : ?>
 
-        <?php foreach ($entry as $oneEntry) : ?>
-            <div>
-                <p><b><?php echo $oneEntry['entry-name'] ?></b></p>
-                <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
-                <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
-                <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
-                <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
-            </div>
-        <?php endforeach ?>
-    <?php else : ?>
-        <p class="empty-subtitle">Nothing yet.</p>
-    <?php endif ?>
 
     <div id="main_content">
+    
 
-        <li class="selected" id="page1" onclick="change_tab(this.id);">Achievement</li>
+        <li class="selected" id="page1" onclick="change_tab(this.id); ">Achievement</li>
         <li class="notselected" id="page2" onclick="change_tab(this.id);">Gratitude</li>
         <li class="notselected" id="page3" onclick="change_tab(this.id);">Motivation</li>
+       
 
         <div class='hidden_desc' id="page1_desc">
             <h2>Achievement</h2>
+
             LOG ALL YOUR ACHIEVEMENTS HERE!!
-            <form>
-                <label for="achievementName">Achievement</label>
-                <input type="text" name="achievementName" id="achievementName" placeholder="Achievement Title">
-                <label for="achievementDescription">Description</label>
-                <input type="text" name="achievementDescription" id="achievementDescription" placeholder="Description">
-                <label for="achievementLink">Link (optional)</label>
-                <input type="url" name="achievementLink" id="achievementLink" placeholder="URL">
-            </form>
+            <?php if (!empty($entry)) : ?>
+                
+                    <?php foreach ($entry as $oneEntry) : ?>
+                        <?php if($oneEntry['entry-type'] == 'Achievement'): ?>
+                        <div>
+                        <p class="entry_name"><b><?php echo $oneEntry['entry-name'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
+                        </div>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                
+                <?php else : ?>
+            <p class="empty-subtitle">Nothing yet.</p>
+            <?php endif ?>
         </div>
-
         <div class='hidden_desc' id="page2_desc">
-            <div id="triangle-bottomleft">
                 <h2>Gratitude</h2>
-            </div>
             GRATITUDE JOURNALING!!
-            <form>
-                <label for="gratitudeName">Gratitude</label>
-                <input type="text" name="gratitudeName" id="gratitudeName" placeholder="Gratitude Title">
-                <label for="gratitudeDescription">Description</label>
-                <input type="text" name="gratitudeDescription" id="gratitudeDescription" placeholder="Description">
-                <label for="gratitudeLink">Link (optional)</label>
-                <input type="url" name="gratitudeLink" id="gratitudeLink" placeholder="URL">
-            </form>
+            <?php if (!empty($entry)) : ?>
+                
+                    <?php foreach ($entry as $oneEntry) : ?>
+                        <?php if($oneEntry['entry-type'] == 'Gratitude'): ?>
+                        <div>
+                        <p class="entry_name"><b><?php echo $oneEntry['entry-name'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
+                        </div>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                <?php else : ?>
+            <p class="empty-subtitle">Nothing yet.</p>
+            <?php endif ?>
         </div>
-
-
         <div class='hidden_desc' id="page3_desc">
             <h2>Motivation</h2>
             ADD YOUR FAV MOTIVATIONAL QUOTES OR VIDEOS HERE:)
-            <form>
-                <label for="motivationName">Motivation</label>
-                <input type="text" name="motivationName" id="motivationName" placeholder="Motivation Title">
-                <label for="motivationDescription">Description</label>
-                <input type="text" name="motivationDescription" id="motivationDescription" placeholder="Description">
-                <label for="motivationLink">Link (optional)</label>
-                <input type="url" name="motivationLink" id="motivationLink" placeholder="URL">
-            </form>
+            <?php if (!empty($entry)) : ?>
+                    <?php foreach ($entry as $oneEntry) : ?>
+                        <?php if($oneEntry['entry-type'] == 'Motivation'): ?>
+                        <div>
+                        <p class="entry_name"><b><?php echo $oneEntry['entry-name'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
+                        <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
+                        </div>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                <?php else : ?>
+            <p class="empty-subtitle">Nothing yet.</p>
+            <?php endif ?>
         </div>
-
         <div id="page_content">
             <h2>Achievements</h2>
             Achievements:)
         </div>
-
     </div>
-
-
-
-
 </body>
-
 </html>
