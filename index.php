@@ -113,8 +113,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
             LOG ALL YOUR ACHIEVEMENTS HERE!!
             <?php if (!empty($entry)) : ?>
-                <?php if($oneEntry['entry-type'] == 'Achievement'): ?>
+                
                     <?php foreach ($entry as $oneEntry) : ?>
+                        <?php if($oneEntry['entry-type'] == 'Achievement'): ?>
                         <div>
                         <p><b><?php echo $oneEntry['entry-name'] ?></b></p>
                         <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
@@ -122,8 +123,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                         <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
                         <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
                         </div>
+                        <?php endif ?>
                     <?php endforeach ?>
-                <?php endif ?>
+                
                 <?php else : ?>
             <p class="empty-subtitle">Nothing yet.</p>
             <?php endif ?>
@@ -132,8 +134,9 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 <h2>Gratitude</h2>
             GRATITUDE JOURNALING!!
             <?php if (!empty($entry)) : ?>
-                <?php if($oneEntry['entry-type'] == 'Gratitude'): ?>
+                
                     <?php foreach ($entry as $oneEntry) : ?>
+                        <?php if($oneEntry['entry-type'] == 'Gratitude'): ?>
                         <div>
                         <p><b><?php echo $oneEntry['entry-name'] ?></b></p>
                         <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
@@ -141,8 +144,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                         <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
                         <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
                         </div>
+                        <?php endif ?>
                     <?php endforeach ?>
-                <?php endif ?>
                 <?php else : ?>
             <p class="empty-subtitle">Nothing yet.</p>
             <?php endif ?>
@@ -151,8 +154,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
             <h2>Motivation</h2>
             ADD YOUR FAV MOTIVATIONAL QUOTES OR VIDEOS HERE:)
             <?php if (!empty($entry)) : ?>
-                <?php if($oneEntry['entry-type'] == 'Motivation'): ?>
                     <?php foreach ($entry as $oneEntry) : ?>
+                        <?php if($oneEntry['entry-type'] == 'Motivation'): ?>
                         <div>
                         <p><b><?php echo $oneEntry['entry-name'] ?></b></p>
                         <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
@@ -160,8 +163,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                         <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
                         <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
                         </div>
+                        <?php endif ?>
                     <?php endforeach ?>
-                <?php endif ?>
                 <?php else : ?>
             <p class="empty-subtitle">Nothing yet.</p>
             <?php endif ?>

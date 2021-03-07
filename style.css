@@ -99,7 +99,8 @@ h1 {
 
 .expand_label {
     display:table-cell;
-    width:1px;
+    width:3px;
+    border-radius: 10px;
 }
 
 .expand_input {
