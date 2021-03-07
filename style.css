@@ -1,13 +1,14 @@
 /*style sheet for the productivity dashboard website */
 
 :root {
-  --body-font: "Noto Sans", sans-serif;
+  --body-font: "Merriweather", sans-serif;
   --title-font: "Rubik", sans-serif;
   --bg-color: #ECE5DF;
   --text-color: #292a0a;
   --achievement-color: #FFEFEF;
   --motivation-color: #E8C6BD;
   --gratitude-color: #DABDAB;
+  --tag-color: #F2D8C9
 }
 
 html {
@@ -49,7 +50,7 @@ h2 {
 #main_content {
   margin-top: 50px;
   width: 1000px;
-  height: 1000px;
+  height: auto;
   margin-left: 250px;
 }
 
@@ -57,11 +58,12 @@ h2 {
   display: inline;
   list-style-type: none;
   background-color: #dabdab;
-  padding: 10px;
-  border-radius: 5px 5px 0px 0px;
+  padding: 5px;
+  padding-right: 150px;
+  border-radius: 8px 0px 0px 0px;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 li#page1 {
@@ -76,14 +78,14 @@ li#page3 {
     background-color: var(--gratitude-color);
 }
 
-#page1_desc {
+/* #page1_desc {
     background-color: red;
-}
+} */
 
-#main_content li.selected {
+/* #main_content li.selected {
   margin-right: 5px;
   color: #292a0a;
-}
+} */
 
 #main_content .hidden_desc {
   display: none;
@@ -92,7 +94,7 @@ li#page3 {
 
 #main_content #page_content {
   background-color: #f9ece6;
-  padding: 10px;
+  padding: 30px;
   margin-top: 10px;
   border-radius: 0px 15px 15px 15px;
   color: #2e2e2e;
@@ -105,26 +107,49 @@ p {
   margin-top: 0px;
 }
 
+#main_content .boxed{
+  border-radius: 15px 15px 15px 15px;
+  border: 2px solid black;
+  background-color: white;
+  padding: 25px
+}
+
+#main_content .echo_text{
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
 p.entry_name {
   margin-top: 15px;
-  margin-bottom: 5px;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 p.entry_tag{
   font-size: 15px;
-  color: #8D8D8D;
+  background-color: var(--tag-color);
+  color: white;
+  padding-left: 10px;
+  border-radius: 5px 5px 5px 5px;
 }
 
-a:link{
+a{
   text-decoration: none;
-  color: #73532D;
+  background-color: black;
+  color: ivory;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 5px 5px 5px 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: normal;
 }
 
 a:hover{
-  color: #730202;
-  text-decoration: underline;
+  color: white;
   font-weight: bold;
 }
 
@@ -133,6 +158,7 @@ a:hover{
   width: 40%;
   border: 3px solid grey;
   padding: 2px;
+  padding-top: 15px;
   border-radius: 10px;
   background-color: white;
 }
@@ -140,8 +166,9 @@ a:hover{
 .input_selection {
   display: block;
   margin: auto;
-  width: 95%;
+  width: 100%;
   padding: 5px;
+  text-align: center;
 }
 
 .submit {
@@ -149,6 +176,7 @@ a:hover{
   display: block;
   margin: auto;
   width: 50%;
+  font-family: var(--body-font);
 }
 
 .expand_label {
@@ -161,6 +189,9 @@ a:hover{
   border-radius: 5px;
   padding: 5px;
   border: 1px solid #292a0a;
+  background-color: #FFF4F2;
+  color: black;
+  text-align: center;
 }
 
 .controls,
@@ -176,4 +207,5 @@ a:hover{
 
 textarea {
   font-family: var(--body-font);
+  background-color: #FFF4F2;
 }

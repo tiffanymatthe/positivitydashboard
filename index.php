@@ -36,6 +36,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -44,15 +46,12 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <div id="add_entry">
         <form method="post" action="send_entry.php">
             <div class="input_selection">
-                <label class="expand_label" for="entryName">Title</label>
                 <input class="expand_input" type="text" name="entryName" id="entryName" placeholder="Title">
             </div>
             <div class="input_selection">
-                <label class="expand_label" for="entryDescription">Description</label>
                 <textarea class="expand_input" name="entryDescription" id="entryDescription" placeholder="Description" rows="2"></textarea>
             </div>
             <div class="input_selection">
-                <label class="expand_label" for="entryLink">Link (optional)</label>
                 <input class="expand_input" type="url" name="entryLink" id="entryLink" placeholder="URL">
             </div>
             <div class="input_selection">
@@ -125,25 +124,23 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
     <div id="main_content">
 
-        <li class="selected" id="page1" onclick="change_tab(this.id); ">Achievement</li>
-        <li class="notselected" id="page2" onclick="change_tab(this.id);">Gratitude</li>
-        <li class="notselected" id="page3" onclick="change_tab(this.id);">Motivation</li>
+        <li id="page1" onclick="change_tab(this.id); ">Achievement</li>
+        <li id="page2" onclick="change_tab(this.id);">Gratitude</li>
+        <li id="page3" onclick="change_tab(this.id);">Motivation</li>
        
 
-        <div class='hidden_desc' id="page1_desc">
-            <h2>Achievement</h2>
-
-            LOG ALL YOUR ACHIEVEMENTS HERE!!
+        <div class="hidden_desc" id="page1_desc">
+            
+            <div class="boxed">
             <?php if (!empty($entry)) : ?>
                 
                     <?php foreach ($entry as $oneEntry) : ?>
                         <?php if($oneEntry['entry-type'] == 'Achievement'): ?>
-                        <div>
-                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?>
+                        <div class="echo_text">
+                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
                         <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
-                        </p>
                         <p><?php echo $oneEntry['entry-description'] ?></p>
-                        <a href="<?php echo $oneEntry['entry-link'] ?>">Link</a>
+                        
                         </div>
                         <?php endif ?>
                     <?php endforeach ?>
@@ -151,48 +148,52 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 <?php else : ?>
             <p class="empty-subtitle">Nothing yet.</p>
             <?php endif ?>
+                </div>
+               
         </div>
+
         <div class='hidden_desc' id="page2_desc">
-                <h2>Gratitude</h2>
-            GRATITUDE JOURNALING!!
+            <div class="boxed">
             <?php if (!empty($entry)) : ?>
                 
                     <?php foreach ($entry as $oneEntry) : ?>
                         <?php if($oneEntry['entry-type'] == 'Gratitude'): ?>
-                        <div>
-                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
+                        <div class="echo_text">
+                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
+                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
                         <p><?php echo $oneEntry['entry-description'] ?></p>
-                        <a href="<?php echo $oneEntry['entry-link'] ?>">Link</a>
-                        <p><?php echo $oneEntry['entry-tag'] ?></p>
                         </div>
                         <?php endif ?>
                     <?php endforeach ?>
                 <?php else : ?>
             <p class="empty-subtitle">Nothing yet.</p>
             <?php endif ?>
+                </div>
         </div>
+
+
         <div class='hidden_desc' id="page3_desc">
-            <h2>Motivation</h2>
-            ADD YOUR FAV MOTIVATIONAL QUOTES OR VIDEOS HERE:)
+            <div class="boxed">
             <?php if (!empty($entry)) : ?>
                     <?php foreach ($entry as $oneEntry) : ?>
                         <?php if($oneEntry['entry-type'] == 'Motivation'): ?>
-                        <div>
-                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
+                        <div class="echo_text">
+                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
+                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
                         <p><?php echo $oneEntry['entry-description'] ?></p>
-                        <a href="<?php echo $oneEntry['entry-link'] ?>">Link</a>
-                        <p><?php echo $oneEntry['entry-tag'] ?></p>
+                        
                         </div>
                         <?php endif ?>
                     <?php endforeach ?>
                 <?php else : ?>
             <p class="empty-subtitle">Nothing yet.</p>
             <?php endif ?>
+            </div>
         </div>
-        <div id="page_content">
-            <h2>Achievements</h2>
+         <div id="page_content">
+             <h2>Achievements</h2>
             Achievements:)
-        </div>
+        </div> 
     </div>
 </body>
 </html>
