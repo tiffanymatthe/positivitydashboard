@@ -6,6 +6,16 @@ function change_tab(id) {
   document.getElementById("page2").className = "notselected";
   document.getElementById("page3").className = "notselected";
   document.getElementById(id).className = "selected";
+
+  if (id == "page1") {
+    document.getElementById("page_content").style.backgroundColor = "var(--achievement-color)";
+  } else if(id == "page2") {
+      document.getElementById("page_content").style.backgroundColor = "var(--motivation-color)";
+  } else {
+    document.getElementById("page_content").style.backgroundColor = "var(--gratitude-color)";
+  }
+  
+
 }
 
 $(document).ready(function () {
