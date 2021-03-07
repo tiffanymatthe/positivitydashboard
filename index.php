@@ -40,7 +40,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 </head>
 
 <body>
-    <h1>The Positivity Dashboard</h1>
+    <h1><span class="dark-bg">The Positivity Dashboard<span></h1>
     <div id="container">
         <button type="button" class="buttons" id="add_entry_button" onclick="show_adding()">Add a positive entry.</button>
     </div>
