@@ -137,3 +137,7 @@ h2 {
 .tag-box div label {
   margin-right: 10px;
 }
+
+textarea {
+    font-family: var(--body-font);
+}
