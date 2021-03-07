@@ -3,31 +3,32 @@
 :root {
   --body-font: "Inter", sans-serif;
   --title-font: "Rubik", sans-serif;
-  --bg-color: #F2F2F2;
-  --text-color: #292a0a;
-  --achievement-color: #F2DCDC;
-  --motivation-color: #A69897;
-  --gratitude-color: #96D9D9;
-  --tag-color: #D996A2;
-  --radio-highlight: #ebc0c8;
-  --radio-dark: #D996A2;
+  --bg-color: #1b2459;
+  --text-color: whitesmoke;
+  --achievement-color: #f26f63;
+  --motivation-color: #6d33a6;
+  --gratitude-color: #f2d852;
+  --tag-color: #1f2c73;
+  --radio-highlight: #4e557e;
+  --radio-dark: #1f2c73;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   background-color: var(--bg-color);
   font-size: large;
-  background: url(tropical-leaves.jpg) no-repeat center center fixed; 
+  /*background: url(tropical-leaves.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 body {
   /* height: 300%;
     width:100%;
     background-image: linear-gradient(to left top, #CEE8F2,#F9ECE6);  */
+  background-color: var(--bg-color);
   font-family: var(--body-font);
   font-weight: 500;
 }
@@ -40,7 +41,6 @@ body {
 .bg-image::before {
   background-image: url(https://preview.ibb.co/fSHzBk/kpme4.png);
   opacity: 0.6;
-  text-emphasis-color: black;
 }
 
 h1 {
@@ -49,10 +49,12 @@ h1 {
   font-size: 40px;
   /* background-color: #DABDAB; */
   margin-top: 100px;
+  color: whitesmoke;
 }
 
 h2 {
   font-size: 20px;
+  color: whitesmoke;
 }
 
 #main_content {
@@ -71,6 +73,7 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   margin-right: 10px;
+  color: var(--text-color);
 }
 
 li#page1 {
@@ -106,11 +109,11 @@ li#page3 {
   margin-top: 5px;
   padding: 30px;
   border-radius: 0px 15px 15px 15px;
-  color: #2e2e2e;
+  color: var(--text-color);
   line-height: 1.6em;
   word-spacing: 4px;
   z-index: 1;
-  background-color: whitesmoke;
+  background-color: #101010;
 }
 
 p {
@@ -121,12 +124,12 @@ p {
 #main_content .boxed {
   border-radius: 15px 15px 15px 15px;
   border: 2px solid black;
-  background-color: white;
+  background-color: #101010;
   padding: 25px;
 }
 
 #main_content .echo_text {
-  margin:auto;
+  margin: auto;
   width: 60%;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -142,7 +145,7 @@ p.entry_name {
 p.entry_tag {
   font-size: medium;
   background-color: var(--tag-color);
-  color: white;
+  color: var(--text-color);
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px 5px 5px 5px;
@@ -155,8 +158,8 @@ p.entry_tag {
 
 a {
   text-decoration: none;
-  background-color: black;
-  color: ivory;
+  background-color: rgb(59, 59, 59);
+  color: var(--text-color);
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 5px 5px 5px 5px;
@@ -173,11 +176,11 @@ a:hover {
 #add_entry {
   margin: auto;
   width: 40%;
-  border: 3px solid grey;
+  border: 3px solid black;
   padding: 2px;
   padding-top: 15px;
   border-radius: 10px;
-  background-color: white;
+  background-color: #101010;
 }
 
 .input_selection {
@@ -224,19 +227,22 @@ textarea {
   font-size: large;
 }
 
-.tag-box label, .controls label {
+.tag-box label,
+.controls label {
   margin-right: 10px;
   display: flex;
-	cursor: pointer;
-	font-weight: 500;
-	position: relative;
-	overflow: hidden;
-	margin-bottom: 0.375em;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
 }
 
-.tag-box label input, .controls label input {
+.tag-box label input,
+.controls label input {
   position: absolute;
   left: -9999px;
+  color: var(--text-color);
 }
 
 label input:checked + span {
@@ -265,7 +271,7 @@ label span:before {
   border-radius: 50%;
   margin-right: 0.375em;
   transition: 0.25s ease;
-  box-shadow: inset 0 0 0 0.125em var(--radio-dark);;
+  box-shadow: inset 0 0 0 0.125em var(--radio-dark);
 }
 
 #container {
@@ -278,7 +284,7 @@ label span:before {
 
 .buttons {
   color: whitesmoke;
-  background-color: var(--text-color);
+  background-color: var(--bg-color);
   border: 1px solid var(--text-color);
   border-radius: 5px;
   padding: 5px;
@@ -286,8 +292,9 @@ label span:before {
 }
 
 .buttons:hover {
-  background-color: black;
-  cursor:pointer;
+  border: 1px solid var(--bg-color);
+  background-color: var(--bg-color);
+  cursor: pointer;
 }
 
 .metadata {
@@ -295,7 +302,7 @@ label span:before {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
-  border-bottom: 2px solid #292a0a;
+  border-bottom: 4px solid #414141;
 }
 
 input.expand_input {
