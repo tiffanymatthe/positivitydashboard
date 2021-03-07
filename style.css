@@ -3,14 +3,16 @@
 :root {
   --body-font: "Noto Sans", sans-serif;
   --title-font: "Rubik", sans-serif;
-  --bg-color: #e7cdbc;
+  --bg-color: #ECE5DF;
   --text-color: #292a0a;
-  --achievement-color: #f9ece6;
+  --achievement-color: #FFEFEF;
+  --motivation-color: #E8C6BD;
+  --gratitude-color: #DABDAB;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
-  background-color: #e7cdbc;
+  background-color: var(--bg-color);
 }
 
 body {
@@ -62,15 +64,24 @@ h2 {
   margin-right: 20px;
 }
 
-#main_content li.notselected {
-  background-color: #dabdab;
-  margin-right: 3px;
-  color: #292a0a;
+li#page1 {
+    background-color: var(--achievement-color);
+}
+
+li#page2 {
+    background-color: var(--motivation-color);
+}
+
+li#page3 {
+    background-color: var(--gratitude-color);
+}
+
+#page1_desc {
+    background-color: red;
 }
 
 #main_content li.selected {
-  background-color: #f9ece6;
-  margin-right: 20px;
+  margin-right: 5px;
   color: #292a0a;
 }
 

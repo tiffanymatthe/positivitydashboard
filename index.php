@@ -124,7 +124,6 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
 
     <div id="main_content">
-    
 
         <li class="selected" id="page1" onclick="change_tab(this.id); ">Achievement</li>
         <li class="notselected" id="page2" onclick="change_tab(this.id);">Gratitude</li>
