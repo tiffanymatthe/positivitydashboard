@@ -44,12 +44,18 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
     <div id="add_entry">
         <form method="post" action="send_entry.php">
-            <label for="entryName">Title</label>
-            <input type="text" name="entryName" id="entryName" placeholder="Title">
-            <label for="entryDescription">Description</label>
-            <input type="text" name="entryDescription" id="entryDescription" placeholder="Description">
-            <label for="entryLink">Link (optional)</label>
-            <input type="url" name="entryLink" id="entryLink" placeholder="URL">
+            <div class="input_selection">
+                <label class="expand_label" for="entryName">Title</label>
+                <input class="expand_input" type="text" name="entryName" id="entryName" placeholder="Title">
+            </div>
+            <div class="input_selection">
+                <label class="expand_label" for="entryDescription">Description</label>
+                <textarea class="expand_input" name="entryDescription" id="entryDescription" placeholder="Description" rows="2"></textarea>
+            </div>
+            <div class="input_selection">
+                <label class="expand_label" for="entryLink">Link (optional)</label>
+                <input class="expand_input" type="url" name="entryLink" id="entryLink" placeholder="URL">
+            </div>
             <div>
                 <h2>Select a category.</h2>
                 <input type="radio" id="category0" name="category" value="Achievement">
@@ -85,7 +91,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                     <input type="radio" id="tag8" name="tag" value="Small">
                     <label for="tag8">Small</label><br>
                 </div>
-                
+
             </div>
             <input type="submit">
         </form>
@@ -161,8 +167,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
     </div>
 
-   
-    
+
+
 
 </body>
 
