@@ -43,17 +43,20 @@ h1{
  border-radius:5px 5px 0px 0px;
  font-weight:bold;
  cursor:pointer;
+ margin-right: 20px;
 }
 
 #main_content li.notselected
 {
  background-color:#DABDAB;
+ margin-right: 3px;
  color:#292A0A;	
 }
 
 #main_content li.selected
 {
  background-color: #F9ECE6;
+ margin-right: 20px;
  color:#292A0A;	
 }
 
@@ -74,12 +77,5 @@ h1{
  word-spacing:4px;
 }
 
-#triangle{
-width: 0;
-height: 0;
-border-style: solid;
-border-width: 50px 0 0 80px;
-border-color: transparent transparent transparent #007bff;
-}
 
 
