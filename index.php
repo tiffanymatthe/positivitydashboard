@@ -47,7 +47,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     </script>
 </head>
 
-<body id="grad">
+<body>
     <h1>The Positivity Dashboard</h1>
 
     <div id="add_entry">
@@ -97,12 +97,15 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
 
     <div id="main_content">
 
-        <li class="selected" id="page1" onclick="change_tab(this.id);">Achievement</li>
+        <li class="selected" id="page1" onclick="change_tab(this.id);
+        ">Achievement</li>
         <li class="notselected" id="page2" onclick="change_tab(this.id);">Gratitude</li>
         <li class="notselected" id="page3" onclick="change_tab(this.id);">Motivation</li>
+       
 
         <div class='hidden_desc' id="page1_desc">
             <h2>Achievement</h2>
+
             LOG ALL YOUR ACHIEVEMENTS HERE!!
             <form>
                 <label for="achievementName">Achievement</label>
@@ -115,9 +118,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
         </div>
 
         <div class='hidden_desc' id="page2_desc">
-            <div id="triangle-bottomleft">
                 <h2>Gratitude</h2>
-            </div>
             GRATITUDE JOURNALING!!
             <form>
                 <label for="gratitudeName">Gratitude</label>
