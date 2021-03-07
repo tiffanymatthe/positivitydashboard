@@ -9,7 +9,7 @@
   --motivation-color: #6d33a6;
   --gratitude-color: #f2d852;
   --tag-color: #1f2c73;
-  --radio-highlight: #4e557e;
+  --radio-highlight: #2c3875;
   --radio-dark: #1f2c73;
 }
 
@@ -17,18 +17,14 @@ html {
   -webkit-font-smoothing: antialiased;
   background-color: var(--bg-color);
   font-size: large;
-  /*background: url(tropical-leaves.jpg) no-repeat center center fixed;
+  background: url(image.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;*/
+  background-size: cover;
 }
 
 body {
-  /* height: 300%;
-    width:100%;
-    background-image: linear-gradient(to left top, #CEE8F2,#F9ECE6);  */
-  background-color: var(--bg-color);
   font-family: var(--body-font);
   font-weight: 500;
 }
@@ -50,6 +46,10 @@ h1 {
   /* background-color: #DABDAB; */
   margin-top: 100px;
   color: whitesmoke;
+}
+
+.dark-bg {
+  background-color: #101010;
 }
 
 h2 {
@@ -236,6 +236,7 @@ textarea {
   position: relative;
   overflow: hidden;
   margin-bottom: 0.375em;
+  color: var(--text-color);
 }
 
 .tag-box label input,
@@ -284,16 +285,15 @@ label span:before {
 
 .buttons {
   color: whitesmoke;
-  background-color: var(--bg-color);
-  border: 1px solid var(--text-color);
+  background-color: var(--radio-highlight);
+  border: 1px solid var(--radio-highlight);
   border-radius: 5px;
   padding: 5px;
   font-size: large;
 }
 
 .buttons:hover {
-  border: 1px solid var(--bg-color);
-  background-color: var(--bg-color);
+  border: 1px solid black;
   cursor: pointer;
 }
 
