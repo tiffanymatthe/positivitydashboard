@@ -17,13 +17,13 @@ function change_tab(id) {
 }
 
 function show_adding() {
-  $("#add_entry").show();
-  $("#container").hide();
+  document.getElementById("add_entry").style.display = "block";
+  document.getElementById("container").style.display = "none";
 }
 
 function hide_adding() {
-  $("#add_entry").hide();
-  $("#container").show();
+  document.getElementById("add_entry").style.display = "none";
+  document.getElementById("container").style.display = "show";
 }
 
 $(document).ready(function () {

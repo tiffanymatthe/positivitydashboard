@@ -31,7 +31,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Positivity Dashboard</title>
     <link href="style.css" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
