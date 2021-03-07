@@ -52,47 +52,70 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 <textarea class="expand_input" name="entryDescription" id="entryDescription" placeholder="Description" rows="2"></textarea>
             </div>
             <div class="input_selection">
-                <label class="expand_label" for="entryLink">Link(optional)</label>
+                <label class="expand_label" for="entryLink">Link (optional)</label>
                 <input class="expand_input" type="url" name="entryLink" id="entryLink" placeholder="URL">
             </div>
             <div class="input_selection">
                 <h2>Category:</h2>
-                <input type="radio" id="category0" name="category" value="Achievement">
-                <label for="category0">Achievement</label><br>
-                <input type="radio" id="category1" name="category" value="Motivation">
-                <label for="category1">Motivation</label><br>
-                <input type="radio" id="category2" name="category" value="Gratitude">
-                <label for="category2">Gratitude</label><br>
+                <div class="controls">
+                    <div>
+                        <input type="radio" id="category0" name="category" value="Achievement">
+                        <label for="category0">Achievement</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="category1" name="category" value="Motivation">
+                        <label for="category1">Motivation</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="category2" name="category" value="Gratitude">
+                        <label for="category2">Gratitude</label><br>
+                    </div>
+                </div>
             </div>
             <div class="input_selection">
-                <h2>Tag:</h2>
+                <h2 id="tag-header" style="display: none;">Tag:</h2>
                 <div class="tag-box" id="achievement-tags" style="display: none;">
-                    <input type="radio" id="tag0" name="tag" value="Personal">
-                    <label for="tag0">Personal</label><br>
-                    <input type="radio" id="tag1" name="tag" value="Professional">
-                    <label for="tag1">Professional</label><br>
+                    <div>
+                        <input type="radio" id="tag0" name="tag" value="Personal">
+                        <label for="tag0">Personal</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="tag1" name="tag" value="Professional">
+                        <label for="tag1">Professional</label><br>
+                    </div>
                 </div>
+
                 <div class="tag-box" id="motivation-tags" style="display: none;">
-                    <input type="radio" id="tag2" name="tag" value="School">
-                    <label for="tag2">School</label><br>
-                    <input type="radio" id="tag3" name="tag" value="Dreams">
-                    <label for="tag3">Dreams</label><br>
-                    <input type="radio" id="tag4" name="tag" value="Work">
-                    <label for="tag4">Work</label><br>
-                    <input type="radio" id="tag5" name="tag" value="Mental Health">
-                    <label for="tag5">Mental Health</label><br>
-                    <input type="radio" id="tag6" name="tag" value="Physical Health">
-                    <label for="tag6">Physical Health</label><br>
+                    <div>
+                        <input type="radio" id="tag2" name="tag" value="School">
+                        <label for="tag2">School</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="tag3" name="tag" value="Dreams">
+                        <label for="tag3">Dreams</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="tag4" name="tag" value="Work">
+                        <label for="tag4">Work</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="tag5" name="tag" value="Mental Health">
+                        <label for="tag5">Mental Health</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="tag6" name="tag" value="Physical Health">
+                        <label for="tag6">Physical Health</label><br>
+                    </div>
                 </div>
+
                 <div class="tag-box" id="gratitude-tags" style="display: none;">
                     <input type="radio" id="tag7" name="tag" value="Big">
                     <label for="tag7">Big</label><br>
                     <input type="radio" id="tag8" name="tag" value="Small">
                     <label for="tag8">Small</label><br>
                 </div>
-
             </div>
-            <div class="input_selection">
+            <div class="input_selection submit">
                 <input type="submit">
             </div>
         </form>

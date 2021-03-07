@@ -24,16 +24,15 @@ h1 {
   margin-top: 40px;
 }
 
-#main_content li
-{
- display:inline;
- list-style-type:none;
- background-color:#DABDAB;
- padding:10px;
- padding-right: 20px;
- border-radius: 5px 5px 0px 0px; 
- font-weight:bold;
- cursor:pointer;
+h2 {
+    font-size: 20px;
+}
+
+#main_content {
+  margin-top: 50px;
+  width: 1000px;
+  height: 1000px;
+  margin-left: 250px;
 }
 
 #main_content li {
@@ -83,27 +82,44 @@ h1 {
 
 #add_entry {
   margin: auto;
-  width: 50%;
+  width: 40%;
   border: 3px solid grey;
-  padding: 10px;
+  padding: 2px;
   border-radius: 10px;
   background-color: white;
 }
 
 .input_selection {
+  display: block;
+  margin: auto;
+  width: 95%;
+  padding: 5px;
+}
+
+.submit {
+    text-align: center;
     display: block;
     margin: auto;
-    width: 70%;
-    padding: 10px;
+    width: 50%;
 }
 
 .expand_label {
-    display:table-cell;
-    width:3px;
-    border-radius: 10px;
+  display: inline-block;
+  width: 30%;
 }
 
 .expand_input {
-    display:table-cell;
-    width:100%;
+  width: 65%;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #292a0a;
+}
+
+.controls, .tag-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.controls div label, .tag-box div label {
+    margin-right: 10px;
 }
