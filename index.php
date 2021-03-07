@@ -1,21 +1,3 @@
-<?php
-require_once "config.php";
-
-$sql = "SELECT * FROM `positivity-entries` WHERE `user-id`= $user_name";
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "id: " . $row["positivity-id"] . " - Name: " . $row["positivity-type"] . "<br>";
-    }
-} else {
-    echo "0 results";
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,35 +24,6 @@ if ($result->num_rows > 0) {
 
 <body id="grad">
     <h1>The Positivity Dashboard</h1>
-
-    <div id="add_entry">
-        <form>
-            <label for="entryName">Achievement</label>
-            <input type="text" name="entryName" id="entryName" placeholder="Title">
-            <label for="entryDescription">Description</label>
-            <input type="text" name="entryDescription" id="entryDescription" placeholder="Description">
-            <label for="entryLink">Link (optional)</label>
-            <input type="url" name="entryLink" id="entryLink" placeholder="URL">
-            <div>
-                <h2>Select a category.</h2>
-                <input type="checkbox" id="category1" name="category1" value="Achievement">
-                <label for="category1">Achievement</label><br>
-                <input type="checkbox" id="category2" name="category2" value="Motivation">
-                <label for="category2">Motivation</label><br>
-                <input type="checkbox" id="category3" name="category3" value="Gratitude">
-                <label for="category3">Gratitude</label><br>
-            </div>
-            <div>
-                <h2>Select a tag.</h2>
-                <input type="checkbox" id="achievement_tag1" name="achievement_tag1" value="Personal">
-                <label for="achievement_tag1">Personal</label><br>
-                <input type="checkbox" id="achievement_tag2" name="achievement_tag2" value="Professional">
-                <label for="achievement_tag2">Professional</label><br>
-                <input type="checkbox" id="motivation_tag1" name="motivation_tag1" value="Physical Health">
-                <label for="motivation_tag1">Physical Health</label><br>
-            </div>
-        </form>
-    </div>
     
     <div id="main_content">
 
@@ -81,6 +34,7 @@ if ($result->num_rows > 0) {
         <div class='hidden_desc' id="page1_desc">
          <h2>Achievement</h2>
          LOG ALL YOUR ACHIEVEMENTS HERE!!
+         <div class='div1'>
          <form>
             <label for="achievementName">Achievement</label>
             <input type="text" name="achievementName" id="achievementName" placeholder="Achievement Title">
@@ -96,6 +50,7 @@ if ($result->num_rows > 0) {
          <h2>Gratitude</h2>
         </div>
          GRATITUDE JOURNALING!!
+         <div class='div1'>
          <form>
             <label for="gratitudeName">Gratitude</label>
             <input type="text" name="gratitudeName" id="gratitudeName" placeholder="Gratitude Title">
@@ -110,6 +65,7 @@ if ($result->num_rows > 0) {
         <div class='hidden_desc' id="page3_desc">
          <h2>Motivation</h2>
        ADD YOUR FAV MOTIVATIONAL QUOTES OR VIDEOS HERE:)
+       <div class='div1'>
        <form>
         <label for="motivationName">Motivation</label>
         <input type="text" name="motivationName" id="motivationName" placeholder="Motivation Title">
