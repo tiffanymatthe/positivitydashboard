@@ -140,11 +140,11 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                     <?php foreach ($entry as $oneEntry) : ?>
                         <?php if($oneEntry['entry-type'] == 'Achievement'): ?>
                         <div>
-                        <p class="entry_name"><b><?php echo $oneEntry['entry-name'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
+                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?>
+                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                        </p>
+                        <p><?php echo $oneEntry['entry-description'] ?></p>
+                        <a href="<?php echo $oneEntry['entry-link'] ?>">Link</a>
                         </div>
                         <?php endif ?>
                     <?php endforeach ?>
@@ -161,11 +161,10 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                     <?php foreach ($entry as $oneEntry) : ?>
                         <?php if($oneEntry['entry-type'] == 'Gratitude'): ?>
                         <div>
-                        <p class="entry_name"><b><?php echo $oneEntry['entry-name'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
+                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
+                        <p><?php echo $oneEntry['entry-description'] ?></p>
+                        <a href="<?php echo $oneEntry['entry-link'] ?>">Link</a>
+                        <p><?php echo $oneEntry['entry-tag'] ?></p>
                         </div>
                         <?php endif ?>
                     <?php endforeach ?>
@@ -180,11 +179,10 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                     <?php foreach ($entry as $oneEntry) : ?>
                         <?php if($oneEntry['entry-type'] == 'Motivation'): ?>
                         <div>
-                        <p class="entry_name"><b><?php echo $oneEntry['entry-name'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-description'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-link'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-date'] ?></b></p>
-                        <p><b><?php echo $oneEntry['entry-tag'] ?></b></p>
+                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?></p>
+                        <p><?php echo $oneEntry['entry-description'] ?></p>
+                        <a href="<?php echo $oneEntry['entry-link'] ?>">Link</a>
+                        <p><?php echo $oneEntry['entry-tag'] ?></p>
                         </div>
                         <?php endif ?>
                     <?php endforeach ?>
