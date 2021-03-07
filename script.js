@@ -23,7 +23,7 @@ function show_adding() {
 
 function hide_adding() {
   document.getElementById("add_entry").style.display = "none";
-  document.getElementById("container").style.display = "show";
+  document.getElementById("container").style.display = "block";
 }
 
 $(document).ready(function () {
