@@ -35,15 +35,18 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <script src="script.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <h1>The Positivity Dashboard</h1>
+    <div id="container">
+        <button type="button" class="buttons" id="add_entry_button" onclick="show_adding()">Add a positive entry.</button>
+    </div>
 
-    <div id="add_entry">
+    <div id="add_entry" style="display:none;">
         <form method="post" action="send_entry.php">
             <div class="input_selection">
                 <input class="expand_input" type="text" name="entryName" id="entryName" placeholder="Title">
@@ -119,7 +122,8 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
                 </div>
             </div>
             <div class="input_selection submit">
-                <input type="submit">
+                <input class="buttons" type="submit">
+                <button type="button" class="buttons" id="hide_button" onclick="hide_adding()">Hide</button>
             </div>
         </form>
     </div>

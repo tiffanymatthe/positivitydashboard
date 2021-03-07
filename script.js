@@ -14,8 +14,16 @@ function change_tab(id) {
   } else {
     document.getElementById("page_content").style.backgroundColor = "var(--gratitude-color)";
   }
-  
+}
 
+function show_adding() {
+  $("#add_entry").show();
+  $("#container").hide();
+}
+
+function hide_adding() {
+  $("#add_entry").hide();
+  $("#container").show();
 }
 
 $(document).ready(function () {

@@ -1,7 +1,7 @@
 /*style sheet for the productivity dashboard website */
 
 :root {
-  --body-font: "Merriweather", sans-serif;
+  --body-font: "Inter", sans-serif;
   --title-font: "Rubik", sans-serif;
   --bg-color: #ece5df;
   --text-color: #292a0a;
@@ -251,4 +251,24 @@ label span:before {
   margin-right: 0.375em;
   transition: 0.25s ease;
   box-shadow: inset 0 0 0 0.125em var(--radio-dark);;
+}
+
+#container {
+  text-align: center;
+}
+
+#add_entry_button {
+  margin: 10px;
+}
+
+.buttons {
+  color: whitesmoke;
+  background-color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
+
+.buttons:hover {
+  background-color: black;
+  cursor:pointer;
 }
