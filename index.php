@@ -37,7 +37,7 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -57,61 +57,65 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
             <div class="input_selection">
                 <h2>Category:</h2>
                 <div class="controls">
-                    <div>
+                    <label>
                         <input type="radio" id="category0" name="category" value="Achievement">
-                        <label for="category0">Achievement</label><br>
-                    </div>
-                    <div>
+                        <span>Achievement</span>
+                    </label>
+                    <label>
                         <input type="radio" id="category1" name="category" value="Motivation">
-                        <label for="category1">Motivation</label><br>
-                    </div>
-                    <div>
+                        <span>Motivation</span>
+                    </label>
+                    <label>
                         <input type="radio" id="category2" name="category" value="Gratitude">
-                        <label for="category2">Gratitude</label><br>
-                    </div>
+                        <span>Gratitude</span>
+                    </label>
                 </div>
             </div>
             <div class="input_selection">
                 <h2 id="tag-header" style="display: none;">Tag:</h2>
                 <div class="tag-box" id="achievement-tags" style="display: none;">
-                    <div>
+                    <label>
                         <input type="radio" id="tag0" name="tag" value="Personal">
-                        <label for="tag0">Personal</label><br>
-                    </div>
-                    <div>
+                        <span>Personal<span>
+                    </label>
+                    <label>
                         <input type="radio" id="tag1" name="tag" value="Professional">
-                        <label for="tag1">Professional</label><br>
-                    </div>
+                        <span>Professional</span>
+                    </label>
                 </div>
 
                 <div class="tag-box" id="motivation-tags" style="display: none;">
-                    <div>
+                    <label>
                         <input type="radio" id="tag2" name="tag" value="School">
-                        <label for="tag2">School</label><br>
-                    </div>
-                    <div>
+                        <span>School</span>
+                    </label>
+                    <label>
                         <input type="radio" id="tag3" name="tag" value="Dreams">
-                        <label for="tag3">Dreams</label><br>
-                    </div>
-                    <div>
+                        <span>Dreams</span>
+                    </label>
+                    <label>
                         <input type="radio" id="tag4" name="tag" value="Work">
-                        <label for="tag4">Work</label><br>
-                    </div>
-                    <div>
+                        <span>Work</span>
+                    </label>
+                    <label>
                         <input type="radio" id="tag5" name="tag" value="Mental Health">
-                        <label for="tag5">Mental Health</label><br>
-                    </div>
-                    <div>
+                        <span>Mental Health</span>
+                    </label>
+                    <label>
                         <input type="radio" id="tag6" name="tag" value="Physical Health">
-                        <label for="tag6">Physical Health</label><br>
-                    </div>
+                        <span>Physical Health</span>
+                    </label>
                 </div>
 
                 <div class="tag-box" id="gratitude-tags" style="display: none;">
-                    <input type="radio" id="tag7" name="tag" value="Big">
-                    <label for="tag7">Big</label><br>
-                    <input type="radio" id="tag8" name="tag" value="Small">
-                    <label for="tag8">Small</label><br>
+                    <label>
+                        <input type="radio" id="tag7" name="tag" value="Big">
+                        <span>Big</span>
+                    </label>
+                    <label>
+                        <input type="radio" id="tag8" name="tag" value="Small">
+                        <span>Small</span>
+                    </label>
                 </div>
             </div>
             <div class="input_selection submit">
@@ -127,73 +131,74 @@ if ($stmt = mysqli_prepare($conn, $sql)) {
         <li id="page1" onclick="change_tab(this.id); ">Achievement</li>
         <li id="page2" onclick="change_tab(this.id);">Gratitude</li>
         <li id="page3" onclick="change_tab(this.id);">Motivation</li>
-       
+
 
         <div class="hidden_desc" id="page1_desc">
-            
+
             <div class="boxed">
-            <?php if (!empty($entry)) : ?>
-                
+                <?php if (!empty($entry)) : ?>
+
                     <?php foreach ($entry as $oneEntry) : ?>
-                        <?php if($oneEntry['entry-type'] == 'Achievement'): ?>
-                        <div class="echo_text">
-                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
-                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
-                        <p><?php echo $oneEntry['entry-description'] ?></p>
-                        
-                        </div>
+                        <?php if ($oneEntry['entry-type'] == 'Achievement') : ?>
+                            <div class="echo_text">
+                                <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
+                                <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                                <p><?php echo $oneEntry['entry-description'] ?></p>
+
+                            </div>
                         <?php endif ?>
                     <?php endforeach ?>
-                
+
                 <?php else : ?>
-            <p class="empty-subtitle">Nothing yet.</p>
-            <?php endif ?>
-                </div>
-               
+                    <p class="empty-subtitle">Nothing yet.</p>
+                <?php endif ?>
+            </div>
+
         </div>
 
         <div class='hidden_desc' id="page2_desc">
             <div class="boxed">
-            <?php if (!empty($entry)) : ?>
-                
+                <?php if (!empty($entry)) : ?>
+
                     <?php foreach ($entry as $oneEntry) : ?>
-                        <?php if($oneEntry['entry-type'] == 'Gratitude'): ?>
-                        <div class="echo_text">
-                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
-                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
-                        <p><?php echo $oneEntry['entry-description'] ?></p>
-                        </div>
+                        <?php if ($oneEntry['entry-type'] == 'Gratitude') : ?>
+                            <div class="echo_text">
+                                <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
+                                <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                                <p><?php echo $oneEntry['entry-description'] ?></p>
+                            </div>
                         <?php endif ?>
                     <?php endforeach ?>
                 <?php else : ?>
-            <p class="empty-subtitle">Nothing yet.</p>
-            <?php endif ?>
-                </div>
+                    <p class="empty-subtitle">Nothing yet.</p>
+                <?php endif ?>
+            </div>
         </div>
 
 
         <div class='hidden_desc' id="page3_desc">
             <div class="boxed">
-            <?php if (!empty($entry)) : ?>
+                <?php if (!empty($entry)) : ?>
                     <?php foreach ($entry as $oneEntry) : ?>
-                        <?php if($oneEntry['entry-type'] == 'Motivation'): ?>
-                        <div class="echo_text">
-                        <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
-                        <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
-                        <p><?php echo $oneEntry['entry-description'] ?></p>
-                        
-                        </div>
+                        <?php if ($oneEntry['entry-type'] == 'Motivation') : ?>
+                            <div class="echo_text">
+                                <p class="entry_name"><?php echo $oneEntry['entry-name'] ?><a href="<?php echo $oneEntry['entry-link'] ?>" target="_blank">LINK</a></p>
+                                <p class="entry_tag"><?php echo $oneEntry['entry-tag'] ?></p>
+                                <p><?php echo $oneEntry['entry-description'] ?></p>
+
+                            </div>
                         <?php endif ?>
                     <?php endforeach ?>
                 <?php else : ?>
-            <p class="empty-subtitle">Nothing yet.</p>
-            <?php endif ?>
+                    <p class="empty-subtitle">Nothing yet.</p>
+                <?php endif ?>
             </div>
         </div>
-         <div id="page_content">
-             <h2>Achievements</h2>
+        <div id="page_content">
+            <h2>Achievements</h2>
             Achievements:)
-        </div> 
+        </div>
     </div>
 </body>
+
 </html>
